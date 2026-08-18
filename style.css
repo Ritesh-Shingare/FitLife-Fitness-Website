@@ -147,7 +147,6 @@ section {
   padding: 20px;
 }
 
-
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -184,11 +183,22 @@ section {
     max-width: 350px;
     width: 100%;
   }
-  .course-card h3{
+  .course-card h3 {
     overflow-wrap: anywhere;
     text-align: center;
   }
   .course-container {
     padding: 10px;
   }
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
 }

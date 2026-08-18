@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     
   </head>
+  
   <body><div class="page-container">
     <nav>
       <a href="index.html" >Home</a>
@@ -17,11 +18,28 @@
     <header>
       <h1>This is my fitness website</h1>
     </header>
-    <main>
+    <main>  
+      <h2>Start Your Fitness Journey</h2>
       <p>
         Welcome to FitLife! We help you stay active, healthy, and motivated
         through fitness, yoga, cardio, meditation, and more.
       </p>
+      <button id="startButton">Start Your Fitness Journey</button>
+      <p id="message"></p>
+
+      <div class="user-section">
+        <h2>Let's get started!</h2>
+
+        <label for="userName">Enter your name:</label>
+        <input type="text"
+        placeholder="Enter your name"
+        id="userName"
+        />
+
+        <button id="welcomeButton">Welcome Me</button>
+        <p id="welcomeMessage"></p>
+      </div>
+      
       <video controls autoplay>
         <source src="fitness-info.mp4.mp4" type="video/mp4" />
       </video>
@@ -29,5 +47,6 @@
     <footer>
       <p>Copyright &copy; All rights are reserved!</p>
     </footer></div>
+    <script src="script.js" ></script>
   </body>
 </html>
