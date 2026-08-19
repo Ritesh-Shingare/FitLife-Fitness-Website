@@ -13,7 +13,10 @@ function startJourney() {
     startButton.textContent = "Journey Started";
 
 }
-startButton.addEventListener("click", startJourney);
+if (startButton) {
+    startButton.addEventListener("click", startJourney);
+}
+
 
 // Find the elements in JavaScript, Welcome User
 const userName = document.querySelector("#userName");
@@ -35,4 +38,101 @@ function welcomeUser() {
     welcomeMessage.className = "success-message";
 
 }
+if (welcomeButton) {
 welcomeButton.addEventListener("click",welcomeUser);
+}
+
+const courses = [
+    {
+        name: "Gym",
+        duration: "8 weeks",
+        level: "Begginer",
+        video: "https://www.youtube.com/embed/DulNz2CkoHI"
+    },
+    {
+        name: "Yoga",
+        duration: "6 weeks",
+        level: " Begginer",
+        video: "https://www.youtube.com/embed/DulNz2CkoHI"
+    },
+    {
+        name: "Cardio",
+        duration: "4 weeks",
+        level: "Intermediate",
+        video: "https://www.youtube.com/embed/DulNz2CkoHI"
+    },
+    {
+        name: "Swimming",
+        duration: "8 week",
+        level: "Begginer",
+        video: "https://www.youtube.com/embed/DulNz2CkoHI"
+    },
+    {
+        name: "Meditation",
+        duration: "4 weeks",
+        level: "Begginer",
+        video: "https://www.youtube.com/embed/DulNz2CkoHI"
+    }
+];
+
+console.log(courses);
+console.log(courses[0].name);
+console.log(courses[4].level);
+console.log(courses[2].duration);
+console.log(courses.length);
+
+
+// const courseNames = courses.map(function (course) {
+//     return course.duration;
+// });
+// console.log(courseNames);
+
+// const courseNames = courses.map((course) => {
+//     return course.name;
+// });
+// console.log(courseNames);
+
+const courseNames = courses.map((course) => course.name);
+console.log(courseNames);
+
+const courseDetails = courses.map((course) => {
+    return `${course.name} - ${course.level} - ${course.duration}`
+});
+console.log(courseDetails);
+
+
+const courseContainer = document.querySelector("#courseContainer");
+
+    console.log(courseContainer);
+
+// Generate a course card
+if (courseContainer) {
+    courses.forEach((course) => {
+        // create and append card
+        const card = document.createElement("article");
+
+        card.className ="course-card";
+
+        card.innerHTML = `
+        <iframe
+        src="${course.video}"
+        allowfullscreen
+        title="${course.name} Course">
+        </iframe>
+
+        <h3>${course.name}</h3>
+        <p>Duration:${course.duration}</p>
+        <p>Level:${course.level}</p> `;
+
+    courseContainer.appendChild(card);
+    });
+}
+
+
+
+
+
+
+
+
+
