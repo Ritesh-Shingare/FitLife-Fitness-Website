@@ -202,3 +202,41 @@ section {
   font-weight: bold;
   margin-top: 10px;
 }
+
+.course-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+
+.filter-container button {
+  padding: 10px 20px;
+  border: none;
+  background-color: turquoise;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+  overflow-wrap: anywhere;
+  gap: 10px;
+}
+
+.filter-container button:hover {
+  transform: translateY(2px);
+  opacity: 0.85;
+}
+@media (max-width: 768px) {
+  .filter-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .filter-container button {
+    width: 80%;
+    max-width:300px;
+  }
+}

@@ -46,13 +46,13 @@ const courses = [
     {
         name: "Gym",
         duration: "8 weeks",
-        level: "Begginer",
+        level: "Beginner",
         video: "https://www.youtube.com/embed/DulNz2CkoHI"
     },
     {
         name: "Yoga",
         duration: "6 weeks",
-        level: " Begginer",
+        level: "Beginner",
         video: "https://www.youtube.com/embed/DulNz2CkoHI"
     },
     {
@@ -64,16 +64,27 @@ const courses = [
     {
         name: "Swimming",
         duration: "8 week",
-        level: "Begginer",
+        level: "Intermediate",
         video: "https://www.youtube.com/embed/DulNz2CkoHI"
     },
     {
         name: "Meditation",
         duration: "4 weeks",
-        level: "Begginer",
+        level: "Beginner",
         video: "https://www.youtube.com/embed/DulNz2CkoHI"
     }
 ];
+
+const beginnerCourses = courses.filter((course) => {
+    return course.level === "Beginner";
+});
+console.log(beginnerCourses);
+
+const intermediateCourses = courses.filter(
+    (course) => course.level === "Intermediate"
+);
+console.log(intermediateCourses);
+
 
 console.log(courses);
 console.log(courses[0].name);
@@ -107,7 +118,12 @@ const courseContainer = document.querySelector("#courseContainer");
 
 // Generate a course card
 if (courseContainer) {
-    courses.forEach((course) => {
+    displayCourses(courses);
+}
+function displayCourses(courseList) {
+    courseContainer.innerHTML = "";
+
+    courseList.forEach((course) => {
         // create and append card
         const card = document.createElement("article");
 
@@ -128,8 +144,32 @@ if (courseContainer) {
     });
 }
 
+const allCoursesButton = document.querySelector("#allCourses");
+const beginnerCoursesButton = document.querySelector("#beginnerCourses");
+const intermediateCoursesButton = document.querySelector("#intermediateCourses");
+if (allCoursesButton) {
+    allCoursesButton.addEventListener("click", () => {
+        displayCourses(courses);
+    });
+}
 
+if (intermediateCoursesButton) {
+    intermediateCoursesButton.addEventListener("click", () => {
+        const intermediateCourses = courses.filter(
+    (course) => course.level === "Intermediate" 
+);
+displayCourses(intermediateCourses);
+});
+}
 
+if (beginnerCoursesButton) {
+    beginnerCoursesButton.addEventListener("click", () => {
+        const beginnerCourses = courses.filter(
+            (course) => course.level ==="Beginner"
+        );
+        displayCourses(beginnerCourses);
+    });
+}
 
 
 
